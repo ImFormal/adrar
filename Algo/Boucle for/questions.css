@@ -1,0 +1,72 @@
+body {
+	background-color: #222222;
+	color: #bbbbbb;
+}
+
+.qcm {
+	display: flex;
+	flex-wrap: wrap;
+	width: max-content;
+}
+.pikachu>.question>.answer :hover{
+	background-image: url("https://i1.wp.com/www.nintendo-insider.com/wp-content/uploads/2016/01/pikachu-banner.jpg?w=1920&ssl=1");
+	background-size: contain;
+}
+.plafond>.question>.answer :hover{
+	background-image: url("https://www.plafondstendusoccitans.com/public/img/big/IMG6592jpg_5d8b8f089ebd0.jpg");
+	background-size: contain;
+}
+.tableur>.question>.answer :hover{
+	background-image: url("https://cdn.1min30.com/wp-content/uploads/2017/10/Logo-Excel.jpg");
+	background-size: contain;
+}
+.lol>.question>.answer :hover{
+	background-image: url("https://vectorified.com/image/league-of-legends-logo-vector-30.png");
+	background-size: contain;
+}
+.wolverine>.question>.answer :hover{
+	background-image: url("https://images.hdqwalls.com/wallpapers/wolverine-2020artwork-5y.jpg");
+	background-size: contain;
+}
+.ventilateur>.question>.answer :hover{
+	background-image: url("https://www.maisonae.fr/wp-content/uploads/NicheVent4.jpg");
+	background-size: contain;
+}
+.bob>.question>.answer :hover{
+	background-image: url("http://images8.alphacoders.com/289/289969.jpg");
+	background-size: contain;
+}
+.question {
+	border-left: solid 3px;
+	border-left-color: inherit;
+	padding: 5px;
+	margin: 4px;
+	margin-top: 10px;
+}
+input {
+	background-color: gray;
+}
+
+.statement {
+	font-family: monospace;
+	font-weight: bold;
+}
+.qcm {
+	padding-top: 10px;
+}
+
+.star {
+	color:lime;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+	-moz-appearance: textfield;
+}
