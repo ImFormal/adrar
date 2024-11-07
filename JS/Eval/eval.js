@@ -106,3 +106,24 @@ console.log("-----EXO10-----");
 function functionbouton(){
     alert("J'ai dis quoi ?");
 }
+
+//Exo 11 (API)
+console.log("-----EXO11-----");
+const url = "https://api.chucknorris.io/jokes/random";
+fetch(url)
+.then(response => response.json())
+.then(data => {
+    let jokeElement = document.createElement('p');
+    jokeElement.innerHTML = `Blague Chuck Norris : "${data.value}"`;
+    document.body.appendChild(jokeElement);
+})
+
+//Exo 12
+console.log("-----EXO12-----");
+function switchMode(){
+    if(document.body.style.backgroundColor == "white"){
+        document.body.style.backgroundColor = "#7FFF00";
+    }else{
+        document.body.style.backgroundColor = "white";
+    }
+}
