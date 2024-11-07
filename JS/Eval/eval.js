@@ -103,9 +103,12 @@ document.write("Ne clique surtout pas sur ce bouton !");
 
 //Exo 10
 console.log("-----EXO10-----");
-function functionbouton(){
+let bouton = document.createElement("button");
+bouton.textContent = "Clique";
+document.body.appendChild(bouton);
+bouton.addEventListener("click", function(){
     alert("J'ai dis quoi ?");
-}
+});
 
 //Exo 11 (API)
 console.log("-----EXO11-----");
@@ -120,10 +123,13 @@ fetch(url)
 
 //Exo 12
 console.log("-----EXO12-----");
-function switchMode(){
+let bouton2 = document.createElement("button");
+bouton2.textContent = "Switch mode";
+document.body.appendChild(bouton2);
+bouton2.addEventListener("click", function(){
     if(document.body.style.backgroundColor == "white"){
         document.body.style.backgroundColor = "#7FFF00";
     }else{
         document.body.style.backgroundColor = "white";
     }
-}
+});
