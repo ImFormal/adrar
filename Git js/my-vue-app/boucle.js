@@ -5,5 +5,5 @@ let textesTab = Array.from(lesTxt);
 console.log(textesTab);
 
 let temp = "JE SUIS UN HACKERMAN";
-textesTab.forEach((p) => {p.textContent = temp; p.style.color = "red";});
+textesTab.forEach((p) => {p.textContent = temp; p.style.color = "red"; p.addEventListener("click", () => alert("T'as cliqué lol !"))});
 console.log(textesTab);
