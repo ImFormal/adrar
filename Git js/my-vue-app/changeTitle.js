@@ -1,9 +1,10 @@
-function changeTitle(){
-    const Title = document.querySelector("h1");
-    if(Title.textContent == "--🥳--")
-        Title.addEventListener("click", (Title) => Title.textContent = "D.O.M Events");
-    else
-        Title.addEventListener("click", (Title) => Title.textContent = "--🥳--");
+function changeTitle() {
+    const title = document.querySelector("h1");
+
+    title.addEventListener("click", function(){
+        if(title.textContent === "--🥳--"){title.textContent = "D.O.M Events";}
+        else{title.textContent = "--🥳--";}
+    });
 }
 
 changeTitle();
