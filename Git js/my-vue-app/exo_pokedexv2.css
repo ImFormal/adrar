@@ -1,0 +1,32 @@
+  .apiContact {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .pokemonCard {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pokemonCard img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .pokemonCard h2 {
+    margin: 10px 0 10px;
+    font-size: 1.2em;
+    font-family: 'Courier New';
+  }
+  
+  .pokemonCard p {
+    margin: 5px 0;
+    font-size: 0.8em;
+    font-family: 'Lucida Sans';
+  }
