@@ -26,8 +26,9 @@ let logMessages = [];
  * @returns {void} Ne retourne aucune valeur.
  */
 function updateHealthBars() {
-
-}
+    playerHealthBar.style.width = `${playerHealth}%`;
+    monsterHealthBar.style.width = `${playerHealth}%`;
+  }
 
 /**
  * Ajoute un message de log à l'historique de la bataille.
@@ -58,7 +59,16 @@ function addLogMessage(who, action, value) {
  * @returns {void} Ne retourne aucune valeur. Modifie l'interface utilisateur en fonction du résultat du jeu.
  */
 function checkWinner() {
-
+    if(playerHealth == 0 || monsterHealth == 0){
+        gameOverSection.style.display = 'flex' ;
+        if(playerHealth == 0 && monsterHealth > playerHealth){
+            winnerMessage.innerText = 'PERDU';
+        } else if(monsterHealth == 0 && playerHealth > monsterHealth){
+            winnerMessage.innerText = 'GAGNÉ';
+        } else {
+            winnerMessage.innerText = 'Match Nul';
+        }
+    }
 }
 
 /**
@@ -88,15 +98,15 @@ function resetGame() {
  * @function
  * @returns {void} Ne retourne aucune valeur.
  */
-const getRandomValue(min, max){
-    return Math.random() * (max - min) + min
+const getRandomValue = (min, max) =>{
+    return Math.floor(Math.random() * (max - min) + min)
 }
 
 function attackMonster() {
     currentRound++;
     let attck = getRandomValue(10,15);
     monsterHealth -= attck;
-    logMessages.append(`Votre attaque a infligé ${attck} de dégat à votre adversaire`);
+    addLogMessage("vous", "inflige", attck);
     attackPlayer();
     checkWinner();
     updateSpecialAttackButton();
@@ -115,7 +125,7 @@ function attackMonster() {
 function attackPlayer() {
     let attck = getRandomValue(10,15);
     playerHealth -= attck;
-    logMessages.append(`L'adversaire vous a infligé ${attck} de dégat`);
+    addLogMessage("adversaire", "inflige", attck);
     checkWinner();
     updateHealthBars();
 }
@@ -149,8 +159,15 @@ function specialAttackMonster() {
  * @returns {void} Ne retourne aucune valeur.
  */
 function healPlayer() {
-
-}
+    currentRound++;
+    const healValue = Math.floor(Math.random() * (25 - 15 + 1)) + 15;
+    playerHealth = Math.min(playerHealth + healValue, 100);
+    addLogMessage('player', 'heal', healValue);
+    attackPlayer();
+    updateHealthBars();
+    checkWinner();
+    updateSpecialAttackButton();
+}; 
 
 /**
  * Permet au joueur d'abandonner la partie.
@@ -174,7 +191,11 @@ function surrenderGame() {
  * @returns {void} Ne retourne aucune valeur.
  */
 function updateSpecialAttackButton() {
-
+    if (currentRound % 3 == 0) {
+        specialAttackButton.disabled = false;
+    } else {
+        specialAttackButton.disabled = true;
+    }
 }
 
 // Event Listeners
