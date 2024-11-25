@@ -1,0 +1,11 @@
+.chartreuse{
+  color: #7FFF00;
+  font-style: italic;
+}
+
+div{
+  display:flex;
+  gap:1rem;
+  color: red;
+  text-decoration:underline;
+}
