@@ -46,10 +46,12 @@
         }
 
         .healthbar__value {
-            background-color: #00a876;
+            background-color: lime;
             width: 100%;
             height: 100%;
-        }
+            animation: ease-in;
+            transition: all 1s;
+            }
 
         .container {
             text-align: center;
@@ -57,7 +59,15 @@
             margin: 1rem auto;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
             border-radius: 12px;
-        }
+            }
+
+            .infos {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            }
 
         #monster h2,
         #player h2 {
@@ -127,7 +137,7 @@
         }
 
         .log--heal {
-            color: green;
+            color: lime;
         }
     </style>
 </head>
@@ -150,10 +160,12 @@
                 <div id="player-health" class="healthbar__value"></div>
             </div>
         </section>
-        <section class="container" id="game-over" style="display: none;">
-            <h2>Game Over!</h2>
-            <h3 id="winner-message"></h3>
-            <button id="restart-button">Commencer une nouvelle partie</button>
+        <section class="container" id="game-over" style="display: none">
+            <div class="infos">
+              <h2>Game Over!</h2>
+              <h3 id="winner-message"></h3>
+              <button id="restart-button">Commencer une nouvelle partie</button>
+            </div>
         </section>
         <section id="controls">
             <button id="attack-button">ATTACK</button>
@@ -166,8 +178,7 @@
             <ul id="log-messages"></ul>
         </section>
     </div>
-    <script type="module" src="../main.js"></script>
-    <script src="tp-9.js"></script>
+    <script src="tp-9-todo.js"></script>
 </body>
 
 </html>
