@@ -1,8 +1,8 @@
 class Utilisateur{
-    constructor(nom, publications = [], groupes = []){
+    constructor(nom){
     this.nom = nom;
-    this.publications = publications;
-    this.groupes = groupes;
+    this.publications = [];
+    this.groupes = [];
     }
 
     publier(contenu){
@@ -23,10 +23,10 @@ class Utilisateur{
 }
 
 class Publication{
-    constructor(auteur, contenu, commentaire = []){
+    constructor(auteur, contenu){
         this.auteur = auteur;
         this.contenu = contenu;
-        this.commentaire = commentaire;
+        this.commentaire = [];
     }
 
     ajouterCommentaire(message) {
@@ -55,9 +55,9 @@ class Commentaire{
 }
 
 class Groupe{
-    constructor(nom, membres = [], estPrivé = false){
+    constructor(nom, estPrivé){
         this.nom = nom;
-        this.membres = membres;
+        this.membres = [];
         this.estPrivé = estPrivé;
     }
     
@@ -93,9 +93,9 @@ try {
     const amandine38 = new Utilisateur("Amandine du 38");
     const charlie = new Utilisateur("Charlie");
 
-    const groupePublic = new Groupe("Voyageurs", [], false);
-    const groupePrivé = new Groupe("Investisseurs", [], true);
-    const justiceLeague = new Groupe("La Justice League", [], true);
+    const groupePublic = new Groupe("Voyageurs", false);
+    const groupePrivé = new Groupe("Investisseurs", true);
+    const justiceLeague = new Groupe("La Justice League", true);
 
     groupePublic.ajouterMembre(utilisateur1);
     groupePrivé.ajouterMembre(utilisateur2);
