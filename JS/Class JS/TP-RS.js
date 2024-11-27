@@ -30,8 +30,8 @@ class Publication{
     }
 
     ajouterCommentaire(message) {
-        let motcensure = ["fck", "fcked", "stupide"];
-        const contientMotInterdit = motcensure.some(mot => (message.contenu).includes(mot));
+        let motCensure = ["fck", "fcked", "stupide"];
+        const contientMotInterdit = motCensure.some(mot => (message.contenu).includes(mot));
         try{
             if(contientMotInterdit){
                 throw new Error(`Le commentaire "${message.contenu}" est innaproprié !`);
