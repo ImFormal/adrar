@@ -1,0 +1,20 @@
+html,body{
+  min-height: 93vh;
+  height: auto;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(#1D0F3D, #5B1684);
+  font-family: 'Rubik', sans-serif;
+}
+
+.content {
+  flex-grow: 1; 
+}

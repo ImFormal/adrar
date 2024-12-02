@@ -1,0 +1,70 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(0.25turn, #1D0F3D, #4D28A3);
+    color: white;
+    text-align: center;
+    position: absolute; 
+    margin-top: auto;
+    height: 7vh;
+    width: 100%;
+  }
+  
+  footer nav {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex: 1;
+  }
+  
+  footer p {
+    margin: 0;
+    margin-left: auto;
+  }
+  
+  footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  
+  /*Tablette*/
+  @media (max-width: 768px) {
+    footer {
+      flex-direction: column; 
+      height: auto;
+      text-align: center; 
+      padding: 15px;
+    }
+  
+    footer nav {
+      gap: 20px; 
+    }
+  
+    footer p {
+      margin-top: 10px;
+      margin-left: 0; 
+    }
+  
+    footer a {
+      font-size: 18px; 
+    }
+  }
+  
+  /*Mobile*/
+  @media (max-width: 480px) {
+    footer nav {
+      gap: 15px;
+    }
+  
+    footer p {
+      margin-top: 10px;
+    }
+  
+    footer a {
+      font-size: 16px;
+    }
+  }
+  
