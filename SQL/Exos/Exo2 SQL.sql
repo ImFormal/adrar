@@ -1,0 +1,63 @@
+CREATE DATABASE IF NOT EXISTS absence CHARSET utf8mb4;
+
+USE absence;
+
+CREATE TABLE IF NOT EXISTS poste (
+    id_poste INT PRIMARY KEY AUTO_INCREMENT UNIQUE NOT NULL,
+    nom_poste VARCHAR(50) UNIQUE NOT NULL
+)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `role` (
+    id_role INT PRIMARY KEY AUTO_INCREMENT UNIQUE NOT NULL,
+    nom_role VARCHAR(50) UNIQUE NOT NULL
+)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS utilisateur (
+    id_utilisateur INT PRIMARY KEY AUTO_INCREMENT UNIQUE NOT NULL,
+    prenom_utilisateur VARCHAR(50) NOT NULL,
+    nom_utilisateur VARCHAR(50) NOT NULL,
+    email VARCHAR(50) UNIQUE NOT NULL,
+    mdp VARCHAR(100) NOT NULL,
+    id_role INT
+)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS motif_absence (
+    id_motif_absence INT PRIMARY KEY AUTO_INCREMENT UNIQUE NOT NULL,
+    motif_absence VARCHAR(50) NOT NULL
+)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS employe (
+    id_employe INT PRIMARY KEY AUTO_INCREMENT UNIQUE NOT NULL,
+    nom_employe VARCHAR(50) NOT NULL,
+    prenom_employe VARCHAR(50) NOT NULL, 
+    age INT NOT NULL,
+    telephone INT NOT NULL,
+    nom_rue VARCHAR(50) NOT NULL,
+    num_rue INT NOT NULL,
+    code_postal INT NOT NULL,
+    ville VARCHAR(50) NOT NULL,
+    id_poste INT
+)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS absence (
+    id_absence INT PRIMARY KEY AUTO_INCREMENT UNIQUE NOT NULL,
+    date_debut DATETIME NOT NULL,
+    date_fin DATETIME NOT NULL,
+    id_motif_absence INT,
+    id_employe INT
+)
+ENGINE = InnoDB;
+
+ALTER TABLE utilisateur ADD FOREIGN KEY (id_role) REFERENCES role(id_role) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE employe ADD FOREIGN KEY (id_poste) REFERENCES poste(id_poste) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE absence ADD FOREIGN KEY (id_motif_absence) REFERENCES motif_absence(id_motif_absence) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE absence ADD FOREIGN KEY (id_employe) REFERENCES employe(id_employe) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE absence ADD COLUMN intitule VARCHAR(240) NOT NULL;
+ALTER TABLE absence ADD COLUMN accepte DATE NOT NULL;
+ALTER TABLE absence MODIFY COLUMN date_debut DATE NOT NULL;
+ALTER TABLE absence DROP COLUMN intitule;
