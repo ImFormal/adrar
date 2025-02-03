@@ -21,5 +21,5 @@
 
 <section>
     <h2>Listes des comptes</h2>
-    <?= $users ?? "<p>Aucun utilisateur enregistré.</p>" ?>
+    <?php echo $users ?>
 </section>
