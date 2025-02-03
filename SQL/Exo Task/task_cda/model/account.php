@@ -98,3 +98,16 @@ function getAllAccount(PDO $bdd): ?array{
         echo "Erreur : " . $e->getMessage();
     }
 }
+
+function getAccountByEmailWithPassword(PDO $bdd, string $email): ?array {
+    try {
+        $requete = "SELECT * FROM account WHERE email = ?";
+        $req = $bdd->prepare($requete);
+        $req->bindParam(1, $email, PDO::PARAM_STR);
+        $req->execute();
+        return $req->fetch(PDO::FETCH_ASSOC) ?: null;
+    } catch (Exception $e) {
+        echo "Erreur : " . $e->getMessage();
+        return null;
+    }
+}

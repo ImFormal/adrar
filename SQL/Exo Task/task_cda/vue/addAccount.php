@@ -23,3 +23,17 @@
     <h2>Listes des comptes</h2>
     <?php echo $users ?>
 </section>
+
+<section>
+    <h1>Connexion</h1>
+    <form action="" method="post">
+        <?= $message ?>
+        <label for="email">Email :</label>
+        <input type="email" name="login_email" required>
+        
+        <label for="password">Mot de passe :</label>
+        <input type="password" name="login_password" required>
+        
+        <input type="submit" value="Se connecter" name="login_submit">
+    </form>
+</section>
