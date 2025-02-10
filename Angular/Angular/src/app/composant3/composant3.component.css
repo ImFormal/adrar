@@ -1,0 +1,9 @@
+.component-3 {
+    background: #98f5e1;
+    padding: 20px;
+    margin: 10px 0;
+  }
+  .nested-components {
+    display: flex;
+    gap: 10px;
+  }
