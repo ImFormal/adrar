@@ -1,5 +1,12 @@
+<h2>Liste des Amis</h2>
 <div class="friends-list">
-    <h2>Liste des Amis</h2>
-    <p>{{ getFriendsList() }}</p>
+    <app-one-friend 
+        *ngFor="let friend of friends" 
+        [name]="friend.name" 
+        [age]="friend.age" 
+        [status]="friend.status" 
+        [reputation]="friend.reputation" 
+        [bio]="friend.bio" 
+        [passion]="friend.passion">
+    </app-one-friend>
 </div>
-  

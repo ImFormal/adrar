@@ -1,0 +1,35 @@
+.friend-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 450px;
+    height: auto;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .friend-card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .friend-card h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .friend-card p, li {
+    font-size: 1em;
+    color: #035f6b;
+    margin: 5px 0;
+  }
+  
+  .friend-card ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 10px 0;
+  }
+  

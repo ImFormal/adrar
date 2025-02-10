@@ -3,5 +3,9 @@
     <p>{{ getAge() }}</p>
     <p>Status: {{ getStatus() }}</p>
     <p>Réputation: {{ getReputation() }}</p>
+    <p>{{ getBio() }}</p>
+    <p>Passions:</p>
+    <ul>
+        <li *ngFor="let item of passion">{{ item }}</li>
+    </ul>
 </div>
-  

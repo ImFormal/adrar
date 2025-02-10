@@ -13,7 +13,7 @@ export class OneFriendComponent {
   @Input() status: string = '';
   @Input() reputation: number = 0; 
   @Input() bio: string = '';
-  @Input() passion: string = '';
+  @Input() passion: string[] = [];
 
   getAge(): string {
     return `Age: ${this.age}`;
@@ -25,6 +25,14 @@ export class OneFriendComponent {
 
   getReputation(): string {
     return this.reputation >= 5 ? 'Cool' : 'Ringard';
+  }
+
+  getBio(): string {
+    return `Bio: ${this.bio}`;
+  }
+
+  getPassion(): string {
+    return `Passions: ${this.passion}`;
   }
 
 }
