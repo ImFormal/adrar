@@ -22,7 +22,7 @@ export class ListFriendsComponent implements OnInit{
 
   onAddFriend(): void {
     if (this.friendName.trim()) {
-      this.statusMessage = `Votre ami "${this.friendName}" a été ajouté`;
+      this.statusMessage = `Votre ami "${this.friendName}" a été ajouté!`;
       this.friendName = ''; 
       this.isDisabled = true;
     }
