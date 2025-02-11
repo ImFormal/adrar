@@ -10,14 +10,29 @@ import { OneFriendComponent } from '../one-friend/one-friend.component';
   styleUrls: ['./list-friends.component.css']
 })
 export class ListFriendsComponent implements OnInit{
+  friendName: string = ''; 
+  statusMessage: string = 'Aucun ami'; 
+  isDisabled: boolean = true; 
+
+  onUpdateFriendsList(event: Event): void {
+    const inputElement = event.target as HTMLInputElement;
+    this.friendName = inputElement.value;
+    this.isDisabled = this.friendName.trim() === '';
+  }
+
+  onAddFriend(): void {
+    if (this.friendName.trim()) {
+      this.statusMessage = `Votre ami "${this.friendName}" a été ajouté`;
+      this.friendName = ''; 
+      this.isDisabled = true;
+    }
+  }
 
   ngOnInit(): void{
     setTimeout(() => {
       this.isDisabled = true;
     }, 3000);
   }
-
-  isDisabled = false;
 
   friends = [
     { name: 'Kévin', age: 31, status: 'online', reputation: 8, bio: "Kévin est un passionné de musique classique et de JS.", passion : ["JS", "Musique Classique", "Podcast"], image: "assets/kevin.png"},

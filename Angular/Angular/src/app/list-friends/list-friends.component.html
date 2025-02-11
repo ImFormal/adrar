@@ -1,5 +1,8 @@
 <h2>Liste des Amis</h2>
-<button [disabled]="isDisabled">Ajouter un ami</button>
+<input type="text" (input)="onUpdateFriendsList($event)" [value]="friendName" placeholder="Entrez un nom d'ami" />
+<p>{{ friendName }}</p>
+<button (click)="onAddFriend()" [disabled]="isDisabled">Ajouter un ami</button>
+<p>{{ statusMessage }}</p>
 <div class="friends-list">
     <app-one-friend 
         *ngFor="let friend of friends" 
