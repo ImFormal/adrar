@@ -2,6 +2,7 @@
 
 include './maison.php';
 include './vehicule.php';
+include './personnage.php';
 
 $lavilladescoeursbrises = new Maison("La Villa des Coeurs Brisés", 30, 10, 3);
 $lavilladescoeursbrises->surface();
@@ -24,3 +25,24 @@ echo "<br>";
 echo $voiture->plusRapide($moto);
 echo "<br>";
 echo $voiture->plusRapide($moto2);
+echo "<br><br>";
+
+$epee = new Epee("Epée");
+$arc = new Arc("Arc");
+$projectile = new ProjectileMagique("Projectile Magique");
+$guerrier = new Guerrier("Jean-Eude", $epee, "Guerrier", "./assets/guerrier.jpg");
+$guerrier2 = new Guerrier("Jean-Quentin", $projectile, "Guerrier", "./assets/guerrier.jpg");
+$magicien = new Magicien("Jean-Kévin", $projectile, "Magicien", "./assets/magicien.jpg");
+$voleur = new Voleur("Jean-Florian", $arc, "Voleur", "./assets/voleur.jpg");
+
+$guerrier->afficher();
+$guerrier->attaquer();
+
+$guerrier2->afficher();
+$guerrier2->attaquer();
+
+$magicien->afficher();
+$magicien->attaquer();
+
+$voleur->afficher();
+$voleur->attaquer();
