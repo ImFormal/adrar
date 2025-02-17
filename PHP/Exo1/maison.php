@@ -1,9 +1,3 @@
-<!--
-Bonus :
-1) Ajouter un attribut nbrEtage à la classe Maison.
-2) Modifier la méthode surface pour qu’elle prenne en compte le paramètre nbrEtage.
--->
-
 <?php
 class Maison{
     private ?string $nom;
