@@ -4,9 +4,7 @@ class ViewFooter implements ViewInterface {
         ob_start();
 ?>
     <footer>
-        <p>
-            All rights reserved
-        </p>
+        <p>Footer</p>
     </footer>
 
     </body>

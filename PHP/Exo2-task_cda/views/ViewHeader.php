@@ -34,7 +34,6 @@ class ViewHeader implements ViewInterface {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tasklist</title>
-        <link rel="stylesheet" href="assets/style/main.css">
     </head>
     <body>
     <header>
