@@ -65,7 +65,7 @@ class Magicien extends Personnage{
 
     public function afficher(): void{
         $this->afficherImage();
-        echo "Je suis un magicien !<br>";
+        echo "Je suis un magicien ! Abrakadabra ! Ooooh ! Regardez moi ça ! Une pièce dans ton oreille !<br>";
     }
 
     public function attaquer(): void{
@@ -90,6 +90,6 @@ class Magicien extends Personnage{
 class Voleur extends Personnage{
     public function afficher(): void{
         $this->afficherImage();
-        echo "Je suis un voleur !<br>";
+        echo "Je suis un voleur ! Abrakadabra ! T'as plus de scooter !<br>";
     }
 }
