@@ -73,6 +73,7 @@ abstract class AbstractController {
         if(isset($_SESSION['email'])){
             $this->getListViews()['header']->setNav('
             <li><a href="/Exo2-task_cda/profile">Profile</a></li>
+            <li><a href="/Exo2-task_cda/categories">Categories</a></li>
             <li><a href="/Exo2-task_cda/logout">Log out</a></li>
             ');
         }
